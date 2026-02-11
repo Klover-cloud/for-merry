@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine 💘</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: clamp(18px, 3vw, 26px);
+    animation: floatUp linear infinite;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+  }
+
+  /* Slider */
+  .slider {
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    transition: transform 0.8s ease;
+  }
+
+  .slide {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.85);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: min(420px, 92%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: pop 1s ease;
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  h1 {
+    font-size: clamp(22px, 5vw, 34px);
+  }
+
+  p {
+    font-size: clamp(14px, 3.8vw, 18px);
+    line-height: 1.5;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+  }
+
+  /* Tap zones */
+  .tap-zone {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 10;
+  }
+
+  .left { left: 0; }
+  .right { right: 0; }
+
+  /* Music hint */
+  .music-hint {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+    opacity: 0.8;
+    animation: fadeOut 5s forwards;
+    z-index: 20;
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 0.8; }
+    100% { opacity: 0; }
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="Audio/Sparks.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-hint">🎵 Tap anywhere to start the music</div>
+
+<script> 
+	function createHeart() { const heart = document.createElement("div"); 
+	heart.className = "heart"; 
+	heart.innerHTML = "💖"; 	
+	heart.style.left = Math.random() * 100 + "vw"; 
+	heart.style.animationDuration = (4 + Math.random() * 3) + "s"; 
+	document.body.appendChild(heart); 
+	setTimeout(() => heart.remove(), 7000); } 
+	setInterval(createHeart, 400); 
+</script>
+
+
+<!-- SLIDES -->
+<div id="slider" class="slider">
+
+  <div class="slide">
+    <div class="card">
+      <h1>Hi Mards 💕</h1>
+      <p>I made something special just for you.</p>
+      <p>(Tap/Click right 👉)</p>
+    </div>
+  </div>
+
+<div class="slide">
+  <div class="card">
+    <h1>Happy Valentines Day 🌸✨</h1>
+    <p>
+      This really did began as a joke.<br>
+      But then, you slipped into my thoughts<br>
+      Suddenly, pink was the only color I noticed.<br>
+      Suddenly, I found myself wondering what songs would make you hum.<br>
+	  Suddenly - slowly, quietly, irreversibly -  I realized;<br>
+	  I was choosing you. Again and again and again...
+    </p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="card">
+    <h1>If I’m Being Honest 🌃</h1>
+    <p>
+		At first, I wasn't sure if this was love-,<br>
+		but I always had an idea that it was an echo of it.<br> 
+		Quiet enough to haunt my night,<br> 
+		yet loud enough to catch my attention.<br>
+	</p>
+	<p>
+		So if I am wrong,let the world condemn me.<br> 
+		For I have never been this unwell,<br>
+		And I don't think I want to be cured.
+    </p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="card">
+    <h1>Also Important 😌</h1>
+	<img src="Images/Ijustkant.jpg">
+    <p>
+      You’re cute.<br>
+      Like… unfairly cute.
+    </p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="card">
+    <h1>One of My Favorites 📸</h1>
+    <img src="Images/ABOSLUTELY ADORABLE.jpg">
+    <p>
+      I smile every time I think about this.
+    </p>
+  </div>
+</div>
+
+
+
+
+<div class="slide">
+  <div class="card">
+    <h1>Thank You for Existing 🌙</h1>
+    <p>
+      I’m really glad<br>
+      I've come to love you.
+    </p>
+  </div>
+</div>
+
+  <div class="slide">
+    <div class="card">
+      <h1>One Last Thing 💌</h1>
+      <p>Come outside, I wanna give you something.</p>
+      <p>I'm at the street to your left and then the first right.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Tap Zones -->
+<div class="tap-zone left" onclick="prevSlide()"></div>
+<div class="tap-zone right" onclick="nextSlide()"></div>
+
+<script>
+  let index = 0;
+  const slider = document.getElementById("slider");
+  const totalSlides = document.querySelectorAll(".slide").length;
+  const music = document.getElementById("bgMusic");
+  let musicStarted = false;
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${index * 100}vw)`;
+  }
+
+  function nextSlide() {
+    startMusic();
+    if (index < totalSlides - 1) {
+      index++;
+      updateSlide();
+    }
+  }
+
+  function prevSlide() {
+    startMusic();
+    if (index > 0) {
+      index--;
+      updateSlide();
+    }
+  }
+
+  function startMusic() {
+    if (!musicStarted) {
+      music.play().catch(() => {});
+      musicStarted = true;
+    }
+  }
+
+  // Swipe support
+  let startX = 0;
+  document.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+  document.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextSlide();
+    if (endX - startX > 50) prevSlide();
+  });
+
+  // Start music on any click
+  document.addEventListener("click", startMusic, { once: true });
+</script>
+
+</body>
+</html>
