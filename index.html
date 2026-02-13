@@ -18,10 +18,7 @@ html, body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
 }
-
-
-/* ===== SLIDER LAYOUT (fixed version) ===== */
-
+	
 #slider {
   position: fixed;        
   top: 0;
@@ -44,6 +41,8 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 5;
 }
 
 
@@ -96,7 +95,7 @@ img {
   bottom: -20px;
   font-size: clamp(18px, 3vw, 26px);
   animation: floatUp linear infinite;
-  opacity: 0..35;
+  opacity: 0.35;
   pointer-events: none;
 
   z-index: 0;
@@ -281,6 +280,7 @@ img {
 
 </body>
 </html>
+
 
 
 
