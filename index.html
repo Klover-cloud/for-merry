@@ -121,7 +121,7 @@ img {
 
 <body>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="auto">
   <source src="Audio/Sparks.mp3" type="audio/mpeg">
 </audio>
 
@@ -271,13 +271,13 @@ img {
     if (startX - endX > 50) nextSlide();
     if (endX - startX > 50) prevSlide();
   });
-
-  // Start music on any click
-  document.addEventListener("click", startMusic, { once: true });
+	
+  document.addEventListener("pointerdown", startMusic, { once: true });
 </script>
 
 </body>
 </html>
+
 
 
 
